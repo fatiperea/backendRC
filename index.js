@@ -4,6 +4,8 @@ import cors from "cors";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
+import productosRouter from "./src/routes/productos.routes.js";
+
 const app = express();
 
 app.set("puerto", process.env.PORT || 4000);
@@ -23,7 +25,9 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "/public")));
 
-app.get("/nuevo", (req, res) => {
+/*app.get("/nuevo", (req, res) => {
   console.log("solicitud get");
   res.send("ok");
-});
+});*/
+
+app.use("/api", productosRouter)
