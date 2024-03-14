@@ -1,6 +1,6 @@
 import Producto from "../database/models/producto.js";
 
-Producto
+
 export const listarProductos = (req, res) => {
   res.send("enviando lista de prod");
 };
