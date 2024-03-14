@@ -35,3 +35,19 @@ export const obtenerProductos = async (req, res) => {
     res.status(400).json({ mensaje: "El producto no pudo ser encontrado" });
   }
 };
+
+export const editarProductos = async (req, res) => {
+  try {
+
+    const produbuscado = await Producto.find(req.params.id);
+    if (!produbuscado) {
+      return res.status(404).json({ mensaje: "El producto no fue encontrado" });
+    }
+    await Producto.findByIdAndUpdate(req.params.id, req.body)
+    res.status(200).json({mensaje:"producto editado"})  
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ mensaje: "ocurrio un error, no fue posible editar" });
+  }
+
+}
