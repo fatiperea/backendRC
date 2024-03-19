@@ -51,3 +51,19 @@ export const editarProductos = async (req, res) => {
   }
 
 }
+
+export const borrarProductos = async (req, res) => {
+  try {
+
+    const produbuscado = await Producto.find(req.params.id);
+    if (!produbuscado) {
+      return res.status(404).json({ mensaje: "El producto no se pudo borrar" });
+    }
+    await Producto.findByIdAndDelete(req.params.id)
+    res.status(200).json({mensaje:"producto borrado"})  
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ mensaje: "ocurrio un error, no fue posible borrar" });
+  }
+
+}
