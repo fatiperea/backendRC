@@ -6,7 +6,7 @@ Se implementan las funciones principales de la gestión de base de datos: __crea
 
 ## :thinking: Como probar:
 
-- En una terminal ejecuta el comando en git: ```git clone https://github.com/fatiperea/RollingCoffee-Perea```
+- En una terminal ejecuta el comando en git: ```git clone https://github.com/fatiperea/backendRC-Perea```
 - Luego de clonar, seguir los siguientes pasos en el editor de código:
 
 ```
